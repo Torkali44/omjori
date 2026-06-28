@@ -574,6 +574,7 @@ a { text-decoration: none; color: inherit; }
   padding: 9px 18px; border-radius: 50px;
   font-size: 0.85rem; font-weight: 700;
   display: inline-flex; align-items: center; gap: 6px;
+  border: none; cursor: pointer; font-family: inherit;
   transition: box-shadow 0.2s, transform 0.2s;
 }
 .course-enroll:hover { box-shadow: 0 4px 16px var(--pink-glow); transform: translateY(-1px); }
@@ -1442,11 +1443,10 @@ footer {
           <p class="course-desc" itemprop="description">تعلمي تصميم المنشورات، الهوية البصرية، الستوري، الريلز، والقوالب الجاهزة باحتراف.</p>
           <button class="accordion-btn" onclick="openCourseModal('canva')">
             📋 استعرضي محاور الدورة التفصيلية (48 محور)
-            <span class="arrow" style="font-size:1rem;">👁️</span>
           </button>
           <div class="course-footer">
             <div class="course-price">500 <small>درهم إماراتي</small></div>
-            <a href="https://bit.ly/4grexm7" target="_blank" class="course-enroll" rel="noopener">سجلي الآن</a>
+            <button class="course-enroll" onclick="openCourseModal('canva')" type="button">محاور الدورة 👁️</button>
           </div>
         </div>
         <!-- Lead Form -->
@@ -1473,11 +1473,10 @@ footer {
           <p class="course-desc">تعلمي استخدام الذكاء الاصطناعي في كتابة المحتوى، التسويق، والأعمال اليومية باحتراف.</p>
           <button class="accordion-btn" onclick="openCourseModal('chatgpt')">
             📋 استعرضي محاور الدورة التفصيلية (27 درس)
-            <span class="arrow" style="font-size:1rem;">👁️</span>
           </button>
           <div class="course-footer">
             <div class="course-price">250 <small>درهم إماراتي</small></div>
-            <a href="https://bit.ly/4grexm7" target="_blank" class="course-enroll" rel="noopener">سجلي الآن</a>
+            <button class="course-enroll" onclick="openCourseModal('chatgpt')" type="button">محاور الدورة </button>
           </div>
         </div>
         <!-- Lead Form -->
@@ -1506,11 +1505,10 @@ footer {
           <p class="course-desc">تعلمي إنشاء مشاريع هدايا مخصصة واحترافية من التصميم إلى التنفيذ وتسويق منتجاتك.</p>
           <button class="accordion-btn" onclick="openCourseModal('cameo')">
             📋 استعرضي محاور الدورة التفصيلية (26 قسم دروس)
-            <span class="arrow" style="font-size:1rem;">👁️</span>
           </button>
           <div class="course-footer">
             <div class="course-price">500 <small>درهم إماراتي</small></div>
-            <a href="https://bit.ly/4grexm7" target="_blank" class="course-enroll" rel="noopener">سجلي الآن</a>
+            <button class="course-enroll" onclick="openCourseModal('cameo')" type="button">محاور الدورة </button>
           </div>
         </div>
         <!-- Lead Form -->
@@ -1537,11 +1535,10 @@ footer {
           <p class="course-desc">تعلمي إنشاء وبيع المنتجات الرقمية عبر موقعك الخاص وتحويل مهاراتك لمصدر دخل مستدام.</p>
           <button class="accordion-btn" onclick="openCourseModal('pdf')">
             📋 استعرضي محاور الدورة التفصيلية (18 درس)
-            <span class="arrow" style="font-size:1rem;">👁️</span>
           </button>
           <div class="course-footer">
             <div class="course-price">299 <small>درهم إماراتي</small></div>
-            <a href="https://bit.ly/4grexm7" target="_blank" class="course-enroll" rel="noopener">سجلي الآن</a>
+            <button class="course-enroll" onclick="openCourseModal('pdf')" type="button">محاور الدورة </button>
           </div>
         </div>
         <!-- Lead Form -->
@@ -1570,11 +1567,10 @@ footer {
           <p class="course-desc">تعلمي إطلاق حملات إعلانية ناجحة تجذب العملاء وتحقق مبيعات حقيقية بأقل ميزانية.</p>
           <button class="accordion-btn" onclick="openCourseModal('ads')">
             📋 استعرضي محاور الدورة التفصيلية (7 دروس)
-            <span class="arrow" style="font-size:1rem;">👁️</span>
           </button>
           <div class="course-footer">
             <div class="course-price">150 <small>درهم إماراتي</small></div>
-            <a href="https://bit.ly/4grexm7" target="_blank" class="course-enroll" rel="noopener">سجلي الآن</a>
+            <button class="course-enroll" onclick="openCourseModal('ads')" type="button">محاور الدورة </button>
           </div>
         </div>
         <!-- Lead Form -->
@@ -1603,11 +1599,10 @@ footer {
           <p class="course-desc">تعلمي تحويل الصور الثابتة إلى فيديوهات ساحرة باستخدام أحدث أدوات الذكاء الاصطناعي.</p>
           <button class="accordion-btn" onclick="openCourseModal('video')">
             📋 استعرضي محاور الدورة التفصيلية (11 درس)
-            <span class="arrow" style="font-size:1rem;">👁️</span>
           </button>
           <div class="course-footer">
             <div class="course-price">220 <small>درهم إماراتي</small></div>
-            <a href="https://bit.ly/4grexm7" target="_blank" class="course-enroll" rel="noopener">سجلي الآن</a>
+            <button class="course-enroll" onclick="openCourseModal('video')" type="button">محاور الدورة </button>
           </div>
         </div>
         <!-- Lead Form -->
@@ -1735,7 +1730,7 @@ footer {
         <div class="testimonial-author">
           <div class="author-avatar">ن</div>
           <div class="author-info">
-            <h5>نورة</h5>
+            <h5>ن.م</h5>
             <p>مصممة جرافيك</p>
             <div class="stars">★★★★★</div>
           </div>
@@ -1746,7 +1741,7 @@ footer {
         <div class="testimonial-author">
           <div class="author-avatar">ر</div>
           <div class="author-info">
-            <h5>ريم</h5>
+            <h5>ر.م</h5>
             <p>صاحبة مشروع إلكتروني</p>
             <div class="stars">★★★★★</div>
           </div>
@@ -1762,7 +1757,7 @@ footer {
         <div class="testimonial-author">
           <div class="author-avatar">س</div>
           <div class="author-info">
-            <h5>سارة</h5>
+            <h5>س.و</h5>
             <p>مسوّقة إلكترونية</p>
             <div class="stars">★★★★★</div>
           </div>
@@ -1778,7 +1773,7 @@ footer {
         <div class="testimonial-author">
           <div class="author-avatar">م</div>
           <div class="author-info">
-            <h5>منى</h5>
+            <h5>م.ع</h5>
             <p>ربة منزل ومصممة</p>
             <div class="stars">★★★★★</div>
           </div>
@@ -1799,7 +1794,7 @@ footer {
         <div class="testimonial-author">
           <div class="author-avatar">ه</div>
           <div class="author-info">
-            <h5>هند</h5>
+            <h5>ه.ط</h5>
             <p>كاتبة محتوى</p>
             <div class="stars">★★★★★</div>
           </div>
@@ -1811,7 +1806,7 @@ footer {
         <div class="testimonial-author">
           <div class="author-avatar">ل</div>
           <div class="author-info">
-            <h5>لطيفة</h5>
+            <h5>ل.س</h5>
             <p>صاحبة مشروع هدايا</p>
             <div class="stars">★★★★★</div>
           </div>
@@ -1826,7 +1821,7 @@ footer {
         <div class="testimonial-author">
           <div class="author-avatar">أ</div>
           <div class="author-info">
-            <h5>أسماء</h5>
+            <h5>ت.ع</h5>
             <p>موظفة تسويق</p>
             <div class="stars">★★★★★</div>
           </div>
@@ -1841,7 +1836,7 @@ footer {
         <div class="testimonial-author">
           <div class="author-avatar">ف</div>
           <div class="author-info">
-            <h5>فاطمة</h5>
+            <h5>ف.ن</h5>
             <p>موظفة تسويق</p>
             <div class="stars">★★★★★</div>
           </div>
