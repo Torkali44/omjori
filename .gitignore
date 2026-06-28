@@ -3,3 +3,4 @@ omjori-landing.html
 build_index.py
 *.jpg
 !images/**/*.jpg
+.gitignore
