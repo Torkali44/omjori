@@ -13,53 +13,54 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
-<style>
-/* ════════════════════════════════════
-   CSS VARIABLES – LIGHT & DARK
-════════════════════════════════════ */
-:root {
-  --pink-deep: #C2185B;
-  --pink-main: #E91E8C;
-  --pink-mid: #F06292;
-  --pink-glow: rgba(233,30,140,0.35);
 
-  /* Light mode */
-  --bg: #FFFFFF;
-  --bg-alt: #FFF0F6;
-  --bg-card: #FFFFFF;
-  --bg-nav: rgba(255,255,255,0.95);
-  --text: #1A0A10;
-  --text-body: #3D1F2C;
-  --text-muted: #7A5060;
-  --border: #F8BBD9;
-  --pink-light: #FCE4EC;
-  --pink-pale: #FFF0F6;
-  --gradient-hero: linear-gradient(135deg, #FCE4EC 0%, #FFF0F6 50%, #FCDDE6 100%);
-  --shadow-card: 0 4px 24px rgba(233,30,140,0.10);
-  --shadow-hover: 0 8px 40px rgba(233,30,140,0.22);
-  --nav-border: #F8BBD9;
-  --footer-bg: #1A0A10;
-  --radius: 16px;
-  --radius-sm: 10px;
-  --gradient-cta: linear-gradient(135deg, #E91E8C 0%, #C2185B 100%);
+<style>
+
+:root {
+  --bg: #ffffff;
+  --bg-nav: rgba(255, 255, 255, 0.95);
+  --bg-card: #fdfbfb;
+  --bg-alt: #fcf5f6;
+  --text: #1a1a1a;
+  --text-body: #4a4a4a;
+  --text-muted: #717171;
+  --pink-main: #D6586A;
+  --pink-deep: #B43E50;
+  --pink-mid: #E07A8A;
+  --pink-light: #FDF2F4;
+  --pink-glow: rgba(214, 88, 106, 0.25);
+  --border: #f0e6e8;
+  --nav-border: #f5eaec;
+  --footer-bg: #221316;
+  --shadow-card: 0 10px 30px rgba(214, 88, 106, 0.06);
+  --shadow-hover: 0 16px 40px rgba(214, 88, 106, 0.16);
+  --radius: 20px;
+  --radius-sm: 12px;
+  --gradient-cta: linear-gradient(135deg, #D6586A 0%, #B43E50 100%);
+  --gradient-hero: linear-gradient(140deg, #FDF4F5 0%, #ffffff 100%);
 }
 
 [data-theme="dark"] {
-  --bg: #0D0008;
-  --bg-alt: #160010;
-  --bg-card: #1C0014;
-  --bg-nav: rgba(13,0,8,0.95);
-  --text: #FAF0F5;
-  --text-body: #E8D0DC;
-  --text-muted: #B080A0;
-  --border: #3D0028;
-  --pink-light: #2D0020;
-  --pink-pale: #1C0016;
-  --gradient-hero: linear-gradient(135deg, #1C0016 0%, #0D0008 50%, #1A0014 100%);
-  --shadow-card: 0 4px 24px rgba(233,30,140,0.18);
-  --shadow-hover: 0 8px 40px rgba(233,30,140,0.40);
-  --nav-border: #3D0028;
-  --footer-bg: #050005;
+  --bg: #0f172a;
+  --bg-nav: rgba(15, 23, 42, 0.95);
+  --bg-card: #1e293b;
+  --bg-alt: #162032;
+  --text: #f8fafc;
+  --text-body: #cbd5e1;
+  --text-muted: #94a3b8;
+  --pink-main: #E26D7E;
+  --pink-deep: #F08D9C;
+  --pink-mid: #D6586A;
+  --pink-light: rgba(214, 88, 106, 0.18);
+  --pink-glow: rgba(226, 109, 126, 0.3);
+  --border: #334155;
+  --nav-border: #1e293b;
+  --footer-bg: #0b1120;
+  --shadow-card: 0 10px 30px rgba(0,0,0,0.2);
+  --shadow-hover: 0 16px 40px rgba(214, 88, 106, 0.25);
+  --radius: 20px;
+  --radius-sm: 12px;
+  --gradient-hero: linear-gradient(140deg, #1e1b26 0%, #0f172a 100%);
 }
 
 /* ════════════════════════════════════
@@ -324,7 +325,7 @@ a { text-decoration: none; color: inherit; }
   width: 420px; height: 420px;
   border-radius: 50%;
   border: 1.5px dashed var(--border);
-  animation: orbit-rotate 18s linear infinite;
+  animation: none;
   z-index: 3;
 }
 
@@ -355,7 +356,7 @@ a { text-decoration: none; color: inherit; }
   box-shadow: 0 4px 20px var(--pink-glow);
   white-space: nowrap;
   /* counter-rotate so text stays upright */
-  animation: orbit-counter 18s linear infinite;
+  animation: none;
   transition: background 0.4s, border-color 0.4s;
 }
 @keyframes orbit-counter {
@@ -878,6 +879,91 @@ footer {
 }
 
 /* ════════════════════════════════════
+   COURSE TOPICS MODAL
+════════════════════════════════════ */
+.course-modal-backdrop {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px; opacity: 0; pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.course-modal-backdrop.active {
+  opacity: 1; pointer-events: auto;
+}
+.course-modal-box {
+  background: var(--bg-card);
+  color: var(--text-body);
+  border: 1.5px solid var(--border);
+  border-radius: 24px;
+  width: 100%; max-width: 720px;
+  max-height: 85vh; display: flex; flex-direction: column;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.35);
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+  overflow: hidden; direction: rtl; text-align: right;
+}
+.course-modal-backdrop.active .course-modal-box {
+  transform: scale(1) translateY(0);
+}
+.course-modal-header {
+  padding: 22px 26px;
+  background: var(--bg-alt);
+  border-bottom: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.course-modal-title {
+  font-size: 1.25rem; font-weight: 900; color: var(--pink-main); margin: 0;
+  line-height: 1.3;
+}
+.course-modal-subtitle {
+  font-size: 0.86rem; color: var(--text-muted); margin-top: 4px; font-weight: 600;
+}
+.course-modal-close {
+  background: var(--pink-light); border: none;
+  color: var(--pink-deep); width: 38px; height: 38px;
+  border-radius: 50%; font-size: 1.2rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.25s; flex-shrink: 0;
+}
+.course-modal-close:hover {
+  background: var(--pink-main); color: white; transform: rotate(90deg) scale(1.05);
+}
+.course-modal-body {
+  padding: 24px 26px; overflow-y: auto; flex: 1;
+  display: flex; flex-direction: column; gap: 18px;
+}
+.modal-section-block {
+  background: var(--bg); border: 1.5px solid var(--border);
+  border-radius: 16px; padding: 18px 20px;
+  box-shadow: var(--shadow-card);
+}
+.modal-section-title {
+  font-size: 1rem; font-weight: 800; color: var(--pink-deep);
+  margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+  padding-bottom: 10px; border-bottom: 1px dashed var(--border);
+}
+.modal-topics-list { list-style: none; padding: 0; margin: 0; }
+.modal-topics-list li {
+  font-size: 0.92rem; color: var(--text-body);
+  padding: 7px 0; display: flex; align-items: flex-start; gap: 10px;
+  line-height: 1.65; font-weight: 500;
+}
+.modal-topics-list li::before {
+  content: '✓'; color: var(--pink-main); font-weight: 900;
+  background: var(--pink-light); width: 22px; height: 22px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 0.78rem; flex-shrink: 0; margin-top: 3px;
+}
+.course-modal-footer {
+  padding: 18px 26px; background: var(--bg-alt);
+  border-top: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 14px; flex-wrap: wrap;
+}
+
+/* ════════════════════════════════════
    SCROLL FADE-IN
 ════════════════════════════════════ */
 .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -1164,7 +1250,7 @@ footer {
 <!-- ══════ NAVBAR ══════ -->
 <nav class="topbar">
   <div class="nav-logo">
-    <img src="images/logo.jpg" alt="أم جوري" class="nav-logo-img">
+    <img src="images/logo.jpeg" alt="أم جوري" class="nav-logo-img">
     <div class="nav-brand">مدرسة <span>أم جوري</span></div>
   </div>
 
@@ -1244,7 +1330,7 @@ footer {
     <!-- ORBIT AVATAR -->
     <div class="hero-image-wrap fade-in">
       <div class="avatar-ring">
-        <img src="images/logo.jpg" alt="أم جوري">
+        <img src="images/logo.jpeg" alt="أم جوري">
       </div>
 
       <!-- Orbit track with 3 floating stats -->
@@ -1347,28 +1433,17 @@ footer {
       <article class="course-card fade-in" itemscope itemtype="https://schema.org/Course">
         <div class="course-thumb" style="background:linear-gradient(135deg,var(--pink-light),var(--bg-alt));">
           <div class="course-thumb-ring">
-            <img src="images/courses/canva.jpg" alt="دورة Canva الاحترافية">
+            <img src="images/courses/canva.jpeg" alt="دورة Canva الاحترافية">
           </div>
           <div class="course-thumb-badge">الأكثر طلباً</div>
         </div>
         <div class="course-body">
           <h3 class="course-title" itemprop="name">🎨 دورة Canva الاحترافية</h3>
           <p class="course-desc" itemprop="description">تعلمي تصميم المنشورات، الهوية البصرية، الستوري، الريلز، والقوالب الجاهزة باحتراف.</p>
-          <button class="accordion-btn" onclick="toggleAcc(this)">
-            استعرضي محاور الدورة (48 محور)
-            <span class="arrow">▼</span>
+          <button class="accordion-btn" onclick="openCourseModal('canva')">
+            📋 استعرضي محاور الدورة التفصيلية (48 محور)
+            <span class="arrow" style="font-size:1rem;">👁️</span>
           </button>
-          <div class="accordion-content">
-            <ul class="acc-list">
-              <li>إعداد Canva والاشتراك الاحترافي</li>
-              <li>المقاسات الدقيقة والألوان والخطوط</li>
-              <li>أدوات الذكاء الاصطناعي داخل Canva</li>
-              <li>تصميم الشعارات والهوية البصرية</li>
-              <li>المنتجات الرقمية القابلة للبيع</li>
-              <li>إنشاء موقع شخصي ونماذج أولية</li>
-              <li>إنتاج فيديوهات احترافية كاملة</li>
-            </ul>
-          </div>
           <div class="course-footer">
             <div class="course-price">500 <small>درهم إماراتي</small></div>
             <a href="https://bit.ly/4grexm7" target="_blank" class="course-enroll" rel="noopener">سجلي الآن</a>
@@ -1390,26 +1465,16 @@ footer {
       <article class="course-card fade-in" itemscope itemtype="https://schema.org/Course">
         <div class="course-thumb" style="background:linear-gradient(135deg,var(--pink-light),var(--bg-alt));">
           <div class="course-thumb-ring">
-            <img src="images/courses/chatgpt.jpg" alt="دورة الذكاء الاصطناعي و ChatGPT">
+            <img src="images/courses/chatgpt.jpeg" alt="دورة الذكاء الاصطناعي و ChatGPT">
           </div>
         </div>
         <div class="course-body">
           <h3 class="course-title" itemprop="name">🤖 دورة الذكاء الاصطناعي و ChatGPT</h3>
           <p class="course-desc">تعلمي استخدام الذكاء الاصطناعي في كتابة المحتوى، التسويق، والأعمال اليومية باحتراف.</p>
-          <button class="accordion-btn" onclick="toggleAcc(this)">
-            استعرضي محاور الدورة
-            <span class="arrow">▼</span>
+          <button class="accordion-btn" onclick="openCourseModal('chatgpt')">
+            📋 استعرضي محاور الدورة التفصيلية (27 درس)
+            <span class="arrow" style="font-size:1rem;">👁️</span>
           </button>
-          <div class="accordion-content">
-            <ul class="acc-list">
-              <li>التعرف على ChatGPT وكتابة الأوامر</li>
-              <li>صناعة المحتوى والكتابة الإبداعية</li>
-              <li>التسويق والحملات الإعلانية</li>
-              <li>التصميم وابتكار أفكار الفيديوهات</li>
-              <li>استخدامات الحياة اليومية</li>
-              <li>الخصوصية والاستخدام الآمن</li>
-            </ul>
-          </div>
           <div class="course-footer">
             <div class="course-price">250 <small>درهم إماراتي</small></div>
             <a href="https://bit.ly/4grexm7" target="_blank" class="course-enroll" rel="noopener">سجلي الآن</a>
@@ -1433,26 +1498,16 @@ footer {
       <article class="course-card fade-in" itemscope itemtype="https://schema.org/Course">
         <div class="course-thumb" style="background:linear-gradient(135deg,var(--pink-light),var(--bg-alt));">
           <div class="course-thumb-ring">
-            <img src="images/courses/camio.jpg" alt="دورة كاميو">
+            <img src="images/courses/camio.jpeg" alt="دورة كاميو">
           </div>
         </div>
         <div class="course-body">
           <h3 class="course-title" itemprop="name">✂️ دورة كاميو (Silhouette Cameo)</h3>
           <p class="course-desc">تعلمي إنشاء مشاريع هدايا مخصصة واحترافية من التصميم إلى التنفيذ وتسويق منتجاتك.</p>
-          <button class="accordion-btn" onclick="toggleAcc(this)">
-            استعرضي محاور الدورة
-            <span class="arrow">▼</span>
+          <button class="accordion-btn" onclick="openCourseModal('cameo')">
+            📋 استعرضي محاور الدورة التفصيلية (26 قسم دروس)
+            <span class="arrow" style="font-size:1rem;">👁️</span>
           </button>
-          <div class="accordion-content">
-            <ul class="acc-list">
-              <li>التعرف على الجهاز وبرنامج Studio</li>
-              <li>أساسيات التصميم والشعارات</li>
-              <li>الفينيل اللاصق والحراري وخامات متنوعة</li>
-              <li>مشاريع عملية: أكواب، حقائب، ميداليات</li>
-              <li>التشطيب الاحترافي وتجنب الأخطاء</li>
-              <li>التسويق والتسعير وإدارة المشروع</li>
-            </ul>
-          </div>
           <div class="course-footer">
             <div class="course-price">500 <small>درهم إماراتي</small></div>
             <a href="https://bit.ly/4grexm7" target="_blank" class="course-enroll" rel="noopener">سجلي الآن</a>
@@ -1474,25 +1529,16 @@ footer {
       <article class="course-card fade-in" itemscope itemtype="https://schema.org/Course">
         <div class="course-thumb" style="background:linear-gradient(135deg,var(--pink-light),var(--bg-alt));">
           <div class="course-thumb-ring">
-            <img src="images/courses/pdf.jpg" alt="دورة بيع الملفات الرقمية">
+            <img src="images/courses/pdf.jpeg" alt="دورة بيع الملفات الرقمية">
           </div>
         </div>
         <div class="course-body">
           <h3 class="course-title" itemprop="name">💰 دورة بيع الملفات الرقمية</h3>
           <p class="course-desc">تعلمي إنشاء وبيع المنتجات الرقمية عبر موقعك الخاص وتحويل مهاراتك لمصدر دخل مستدام.</p>
-          <button class="accordion-btn" onclick="toggleAcc(this)">
-            استعرضي محاور الدورة
-            <span class="arrow">▼</span>
+          <button class="accordion-btn" onclick="openCourseModal('pdf')">
+            📋 استعرضي محاور الدورة التفصيلية (18 درس)
+            <span class="arrow" style="font-size:1rem;">👁️</span>
           </button>
-          <div class="accordion-content">
-            <ul class="acc-list">
-              <li>إنشاء ملفات PDF احترافية للبيع</li>
-              <li>تصميم غلاف جذاب وموكاب احترافي</li>
-              <li>إطلاق موقعك وإعداد بوابات الدفع</li>
-              <li>إطلاق حملات تسويقية وجذب العملاء</li>
-              <li>سحب الأرباح وإدارة دخلك الرقمي</li>
-            </ul>
-          </div>
           <div class="course-footer">
             <div class="course-price">299 <small>درهم إماراتي</small></div>
             <a href="https://bit.ly/4grexm7" target="_blank" class="course-enroll" rel="noopener">سجلي الآن</a>
@@ -1516,25 +1562,16 @@ footer {
       <article class="course-card fade-in" itemscope itemtype="https://schema.org/Course">
         <div class="course-thumb" style="background:linear-gradient(135deg,var(--pink-light),var(--bg-alt));">
           <div class="course-thumb-ring">
-            <img src="images/courses/ads.jpg" alt="دورة الإعلانات الممولة">
+            <img src="images/courses/ads.jpeg" alt="دورة الإعلانات الممولة">
           </div>
         </div>
         <div class="course-body">
           <h3 class="course-title" itemprop="name">📢 دورة الإعلانات الممولة</h3>
           <p class="course-desc">تعلمي إطلاق حملات إعلانية ناجحة تجذب العملاء وتحقق مبيعات حقيقية بأقل ميزانية.</p>
-          <button class="accordion-btn" onclick="toggleAcc(this)">
-            استعرضي محاور الدورة
-            <span class="arrow">▼</span>
+          <button class="accordion-btn" onclick="openCourseModal('ads')">
+            📋 استعرضي محاور الدورة التفصيلية (7 دروس)
+            <span class="arrow" style="font-size:1rem;">👁️</span>
           </button>
-          <div class="accordion-content">
-            <ul class="acc-list">
-              <li>تجهيز حسابك وفك أسرار الإعلانات</li>
-              <li>تصميم إعلان يجذب الانتباه والتفاعل</li>
-              <li>كتابة نص إعلاني يحفز على الشراء</li>
-              <li>استهداف الجمهور المثالي بدقة</li>
-              <li>قراءة النتائج وتوسيع الحملات الناجحة</li>
-            </ul>
-          </div>
           <div class="course-footer">
             <div class="course-price">150 <small>درهم إماراتي</small></div>
             <a href="https://bit.ly/4grexm7" target="_blank" class="course-enroll" rel="noopener">سجلي الآن</a>
@@ -1558,25 +1595,16 @@ footer {
       <article class="course-card fade-in" itemscope itemtype="https://schema.org/Course">
         <div class="course-thumb" style="background:linear-gradient(135deg,var(--pink-light),var(--bg-alt));">
           <div class="course-thumb-ring">
-            <img src="images/courses/video.jpg" alt="دورة تحويل الصور إلى فيديو">
+            <img src="images/courses/video.jpeg" alt="دورة تحويل الصور إلى فيديو">
           </div>
         </div>
         <div class="course-body">
           <h3 class="course-title" itemprop="name">🎬 دورة تحويل الصور إلى فيديو</h3>
           <p class="course-desc">تعلمي تحويل الصور الثابتة إلى فيديوهات ساحرة باستخدام أحدث أدوات الذكاء الاصطناعي.</p>
-          <button class="accordion-btn" onclick="toggleAcc(this)">
-            استعرضي محاور الدورة
-            <span class="arrow">▼</span>
+          <button class="accordion-btn" onclick="openCourseModal('video')">
+            📋 استعرضي محاور الدورة التفصيلية (11 درس)
+            <span class="arrow" style="font-size:1rem;">👁️</span>
           </button>
-          <div class="accordion-content">
-            <ul class="acc-list">
-              <li>إنشاء الحساب والتعرف على الباقات</li>
-              <li>تصميم أول فيديو احترافي</li>
-              <li>إضافة الأصوات والتعليق الصوتي</li>
-              <li>مواقع وأدوات مساعدة مميزة</li>
-              <li>أسرار إنتاج فيديوهات أكثر جاذبية</li>
-            </ul>
-          </div>
           <div class="course-footer">
             <div class="course-price">220 <small>درهم إماراتي</small></div>
             <a href="https://bit.ly/4grexm7" target="_blank" class="course-enroll" rel="noopener">سجلي الآن</a>
@@ -1702,7 +1730,8 @@ footer {
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card fade-in">
-        <p class="testimonial-text">دورة كانفا غيّرت شغلي بالكامل! الشرح بسيط والتطبيق سهل. استطعت إنشاء هوية بصرية كاملة لمشروعي في أسبوعين.</p>
+        <p class="testimonial-text">أكتب اليك مدربتي ام جوري للتعبير عن امتناني العميق لإتاحة الفرصة لي للتدرب تحت توجيهكم وإرشادكم. لقد كانت ثروتك من المعرفة والخبرة لا تقدر بثمن في تشكيل مهاراتي وفهمي لـ [ دورة . الكاميو ]
+شكرا لك ام جوري</p>
         <div class="testimonial-author">
           <div class="author-avatar">ن</div>
           <div class="author-info">
@@ -1713,7 +1742,7 @@ footer {
         </div>
       </div>
       <div class="testimonial-card fade-in">
-        <p class="testimonial-text">تعلمت مهارات ساعدتني في زيادة دخلي. المحتوى نادر جداً وعملي بشكل غير طبيعي. أنصح كل بنت تبدأ من هنا.</p>
+        <p class="testimonial-text">مرحبا يا ام جوري .. عساج بخير حبيت اشكرج على كل الي تقدمينه لنا کمشترکه معاج.. ما شاء الله الدروس جميله و شرحج حلو .. و احلى شي انج مستعده تساعدين في اي مشكله او شي يواجه المتدربات سواء في قروب الوتساب او تواصل شخصي .. ادري وايد احشرج باسألتي بس ما تقصرين والله يزاااااج الله خير ان شاء الله</p>
         <div class="testimonial-author">
           <div class="author-avatar">ر</div>
           <div class="author-info">
@@ -1724,7 +1753,12 @@ footer {
         </div>
       </div>
       <div class="testimonial-card fade-in">
-        <p class="testimonial-text">المحتوى والدعم المستمر أصبح جزءاً من روتيني اليومي. أشعر بتطور حقيقي كل أسبوع وبدأت أحقق دخلاً من مهاراتي.</p>
+        <p class="testimonial-text">ام جوري
+تبارك الله انتي مخلصه في عملج وعطائج
+وكريمه
+وما تقصرين
+وهذه من مميزات المعلم المحب لعمله
+موفقه يارب</p>
         <div class="testimonial-author">
           <div class="author-avatar">س</div>
           <div class="author-info">
@@ -1736,7 +1770,11 @@ footer {
       </div>
     
       <div class="testimonial-card fade-in">
-        <p class="testimonial-text">كنت خايفة أبدأ لأني ما عندي خبرة، لكن أم جوري شرحت كل شيء بطريقة تحسسك إنك تقدري تسوين أي شيء.</p>
+        <p class="testimonial-text">بالنسبة للدورات جدا مفيدين وفيهم شرحكافي ووافي والمدربة أم جوري ما بتقصر ابدا باي معلومة والله يجزيها الخير بترد على جميع الاستفسارات بكل صدر رحب و متعاونه لا بعد الحدود
+
+بس طبعا هي بتعطي معلومات وما بتقصر بس كمان المتدرب لازم يبذل جهد ويلتزم ويتابع حتى يستفيد ويتطور ويشتغل على نفسه,
+
+حبيبتي بتستاهلي والله كل خير صدقا الكلام من القلب ومش مجاملة الله يبارك برزقك وعملك</p>
         <div class="testimonial-author">
           <div class="author-avatar">م</div>
           <div class="author-info">
@@ -1747,7 +1785,17 @@ footer {
         </div>
       </div>
       <div class="testimonial-card fade-in">
-        <p class="testimonial-text">دورة الذكاء الاصطناعي وفّرت عليّ ساعات من العمل اليومي. الآن أستخدم ChatGPT في كل شيء من كتابة المحتوى لتخطيط الحملات.</p>
+        <p class="testimonial-text">شو اقول وشو اخلي
+
+ما شاء الله ماشالله
+
+البنات كفن ووفن ما شاء الله الكلام قليل في حقج ام جوري نعم ما قصرتي معانا اكيد كل وحده عارفه انا صار لي سنتين بس اتابع واشوف كيف اتعلم عليه واحاول ادخل دورات بس كان السعر مول ما يناسبني صعب عليه وحتى الجهاز كان وايد صعب اخذه ع سعره من شفت اعلان دورتج قلت يتني الفرصه اني ادخل وتحمست وسرت اخذ الجهاز قبل ما. ادخل الدوره
+
+الله يسعدج ام جوري دنيا واخره على جهودج معانا ووقتج الثمين لنا
+
+اشكرج من كل قلبي
+
+وادعي لج بالخير دائما على وقفتج معانا بكل</p>
         <div class="testimonial-author">
           <div class="author-avatar">ه</div>
           <div class="author-info">
@@ -1758,7 +1806,8 @@ footer {
         </div>
       </div>
       <div class="testimonial-card fade-in">
-        <p class="testimonial-text">دورة كاميو فتحت لي باب دخل جديد كلياً. الآن لدي مشروع هدايا من المنزل وطلبات كثيرة. شكراً أم جوري.</p>
+        <p class="testimonial-text">أولاً يزاج الله خير أم جوري على كل ألا قدمتيه .. أفكارج الإبداعية وردج السريع في أي وقت احتجنا فيه توضيحموجودة وعلى تواصل .. الخطوات واضحة والأفكااار جميلة والخطوات التي يتم مشاركتها سهلة ومنسقة .. وكل درهم تم دفعه للدورة يستحق !
+أنا معلمة واستفدت واااايد</p>
         <div class="testimonial-author">
           <div class="author-avatar">ل</div>
           <div class="author-info">
@@ -1769,11 +1818,30 @@ footer {
         </div>
       </div>
       <div class="testimonial-card fade-in">
-        <p class="testimonial-text">شهادة الحضور أضفتها لسيرتي الذاتية وساعدتني في الحصول على عمل. الدورات تستحق كل درهم دفعته.</p>
+        <p class="testimonial-text">أم جوري الغالية مشكورة على الدورة فعلا استفدنا أشياء وايد مهمة كيفية استخدام جهاز الكاميو وتحسين الصور والله انك ما تقصري ويانا وتردين على أسلتنا بصدر رحب حتى شرح الدروس
+
+سهلة وواضحة
+
+جعلها الله في ميزان حسناتج</p>
         <div class="testimonial-author">
           <div class="author-avatar">أ</div>
           <div class="author-info">
             <h5>أسماء</h5>
+            <p>موظفة تسويق</p>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+       <div class="testimonial-card fade-in">
+        <p class="testimonial-text">ما شاء الله خواتي المشتركات ما قصروا في الكلام الدورة حلوة من كل النواحي شرحج بسيط و حلو و مفهوم و تفاعلج مع المشتركات من احسن ما يكون اتردین على كل الاستفسارات و اتحلين أي مشكلة يواجهونها ما اتردين حد الله يحفظج
+
+و حتى قروب المشتركات ما شاء الله عليهم كلهم بدعوا في شغلهم و الفضل يرجع لج مشكورة وايد
+
+صح إني ما أتفاعل فالقروب وايد بس موجودة عالخط معاكم</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">ف</div>
+          <div class="author-info">
+            <h5>فاطمة</h5>
             <p>موظفة تسويق</p>
             <div class="stars">★★★★★</div>
           </div>
@@ -1789,7 +1857,7 @@ footer {
     <div class="about-inner">
       <div class="about-image-wrap fade-in">
         <div class="about-avatar-bg">
-          <img src="images/logo.jpg" alt="أم جوري">
+          <img src="images/logo.jpeg" alt="أم جوري">
         </div>
         <div class="about-badge ab-1"><div class="num">+200</div><div class="lbl">متدربة ناجحة</div></div>
         <div class="about-badge ab-2"><div class="num">منذ 2021</div><div class="lbl">في التدريب الرقمي</div></div>
@@ -2084,6 +2152,141 @@ document.querySelectorAll('.faq-question').forEach(q => {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
 })();
+
+/* ═══ COURSE TOPICS MODAL JS ═══ */
+const courseTopicsData = {
+  canva: {
+    title: "🎨 محاور دورة Canva الاحترافية",
+    subtitle: "48 درساً ومحوراً عملياً",
+    sections: [
+      { title: "المحور الأول: إعداد الحساب والاشتراك", items: ["1. تثبيت Canva وفتح حسابك.", "2. فهم الاشتراكات واختيار الأنسب.", "3. الانتقال من مجاني إلى احترافي.", "4. تفعيل Canva Pro بالكامل.", "5. اكتشاف أسرار العناصر الاحترافية."] },
+      { title: "المحور الثاني: أساسيات التصميم الاحترافي", items: ["6. العمل بالمقاسات الدقيقة.", "7. توظيف الألوان بذكاء.", "8. اختيار الخطوط الترندية.", "9. تطبيق تأثيرات النصوص.", "10. احتراف انحناء الكلمات.", "11. إضافة الظلال وقص الصور باحتراف.", "12. تقسيم الصور بطرق احترافية.", "13. استخدام أكواد العناصر."] },
+      { title: "المحور الثالث: أدوات الذكاء الاصطناعي والتعديل", items: ["14. استخدام أدوات الذكاء الاصطناعي داخل Canva.", "15. تجديد الصور القديمة.", "16. استخدام الممحاة والتمويه.", "17. تفريغ الصور باحتراف والحصول على صور مفرغة جاهزة.", "18. استخراج موكاب احترافي."] },
+      { title: "المحور الرابع: التصاميم المكتبية والأعمال", items: ["19. تصميم المستندات باحتراف.", "20. إعداد سيرة ذاتية قوية.", "21. تصميم الفواتير باحتراف.", "22. إعداد المقترحات.", "23. إنشاء التقارير.", "24. تصميم أوراق رسمية بهوية أنيقة."] },
+      { title: "المحور الخامس: العروض والتخطيط", items: ["25. إنشاء عروض تقديمية تخطف الانتباه.", "26. الإبداع على السبورة البيضاء.", "27. بناء خرائط ذهنية منظمة.", "28. تصميم الرسوم البيانية.", "29. إعداد المخططات الاحترافية.", "30. إنشاء مخططات الأسماء."] },
+      { title: "المحور السادس: التسويق والعلامة التجارية", items: ["31. تصميم شعار احترافي.", "32. تصميم بطاقات أعمال احترافية.", "33. إعداد نشرات إعلانية جذابة.", "34. تصميم الكتيبات الاحترافية.", "35. تصميم محتوى السوشال ميديا."] },
+      { title: "المحور السابع: المنتجات الرقمية القابلة للبيع", items: ["36. إنشاء تقويمات قابلة للبيع.", "37. إنشاء كتب تلوين قابلة للبيع.", "38. تصميم قوالب التخرج.", "39. إعداد تصاميم جاهزة للطباعة.", "40. تصميم محتوى تعليمي بصري."] },
+      { title: "المحور الثامن: المواقع والنماذج", items: ["41. تصميم النماذج الأولية.", "42. إنشاء موقعك الشخصي."] },
+      { title: "المحور التاسع: احتراف الفيديو", items: ["43. إنتاج فيديوهات بسهولة.", "44. تصميم الفيديو من الصفر.", "45. تحريك الصور بإبداع.", "46. التحكم بسرعة الحركة.", "47. إنتاج فيديو احترافي كامل."] },
+      { title: "المحور العاشر: مشاريع إبداعية متقدمة", items: ["48. إنشاء لعبة تفاعلية بالذكاء الاصطناعي."] }
+    ]
+  },
+  cameo: {
+    title: "✂️ محاور دورة جهاز كاميو (Silhouette Cameo)",
+    subtitle: "26 قسم دروس وتطبيقات شاملة",
+    sections: [
+      { title: "أولاً: التعريف بجهاز كاميو", items: ["التعرف على مكونات الجهاز وطريقة عمله.", "إعداد الجهاز وبرنامج Silhouette Studio.", "التعرف على أدوات الجهاز وإعدادات القص.", "اختيار الخامات المناسبة لكل مشروع."] },
+      { title: "ثانياً: أساسيات التصميم", items: ["تصميم الأسماء والشعارات والعبارات.", "استيراد الصور وتحويلها إلى ملفات قص.", "تجهيز الملفات للطباعة والقص (Print & Cut)."] },
+      { title: "ثالثاً: التعرف على الخامات", items: ["الفينيل اللاصق والحراري.", "ورق الطباعة والستيكر والأكريليك.", "الكرتون والورق المقوى والقماش والكانفس وخامات الهدايا والتغليف."] },
+      { title: "رابعاً: تنفيذ المشاريع العملية", items: ["المحافظ والمحافظ الصغيرة وحافظات البطاقات والمكياج.", "الحقائب القماشية والأكواب والأكواب الحرارية وحافظات الجوال.", "الميداليات ومشابك وفِرش الشعر المخصصة.", "علاقات الملابس للأعراس وأرقام الطاولات وبطاقات الدعوات والتوزيعات.", "علب الهدايا وتغليف الشوكولاتة بالسناكات وأكياس الفشار للحفلات.", "البالونات المخصصة واللوحات والديكورات المنزلية."] },
+      { title: "خامساً: التشطيب والإخراج", items: ["استخدام ورق النقل بطريقة صحيحة.", "تثبيت التصاميم على مختلف الخامات.", "تشطيب المنتجات باحترافية وتجنب الأخطاء الشائعة أثناء التنفيذ."] },
+      { title: "سادساً: التسويق وبدء المشروع", items: ["اختيار المنتجات الأكثر طلباً وتسعيرها وتصويرها بطريقة احترافية.", "تجهيز الهوية البصرية والتسويق عبر وسائل التواصل الاجتماعي.", "إدارة مشروع الهدايا والتخصيص وتحقيق الأرباح."] }
+    ]
+  },
+  chatgpt: {
+    title: "🤖 محاور دورة شات جي بي تي والذكاء الاصطناعي",
+    subtitle: "27 درساً احترافياً متكاملاً",
+    sections: [
+      { title: "المحور الأول: التعرف على شات جي بي تي", items: ["ما هو شات جي بي تي وكيف يعمل.", "الفرق بين النماذج والإصدارات المختلفة.", "كتابة الأوامر (Prompts) بطريقة صحيحة.", "الأخطاء الشائعة التي يجب تجنبها."] },
+      { title: "المحور الثاني: صناعة المحتوى والكتابة", items: ["تأليف القصص والمحتوى الإبداعي.", "كتابة السيرة الذاتية الاحترافية والبريد الإلكتروني باحتراف.", "الترجمة بين اللغات المختلفة.", "تعلم اللغة الإنجليزية باستخدام شات جي بي تي."] },
+      { title: "المحور الثالث: التسويق والأعمال", items: ["تصميم الإعلانات التسويقية وإنشاء حملات متكاملة.", "ابتكار أفكار للمشاريع والتسعير وحساب الأرباح.", "حل المشكلات واتخاذ القرارات والتغلب على التردد."] },
+      { title: "المحور الرابع: التصميم والإبداع", items: ["تصميم الشخصيات وابتكار أفكار الفيديوهات والمحتوى.", "صناعة محتوى موسمي للصيف والمناسبات."] },
+      { title: "المحور الخامس: الحياة اليومية", items: ["المساعدة في المسائل الحسابية والاستفسار عن المعلومات الصحية.", "إعداد وصفات الطبخ وبناء برامج الريجيم والتغذية.", "إعداد خطط التمارين الرياضية وتخطيط الرحلات والسفر.", "تحويل العملات والحسابات المالية."] },
+      { title: "المحور السادس: الخصوصية والاستخدام الآمن", items: ["المعلومات التي لا يجب مشاركتها وحماية البيانات والخصوصية.", "كيفية إيقاف أو تعطيل الخصائص غير المرغوبة.", "أفضل الممارسات للاستخدام الآمن والاحترافي."] }
+    ]
+  },
+  ads: {
+    title: "📢 محاور دورة الإعلانات الممولة",
+    subtitle: "7 دروس عملياً مكثفة",
+    sections: [
+      { title: "المحور الأول: أساسيات الإعلانات الممولة", items: ["تجهيز حسابك للإعلانات الممولة.", "فك أسرار الإعلانات الممولة من الصفر.", "فهم أهداف الحملات الإعلانية واختيار الهدف المناسب."] },
+      { title: "المحور الثاني: صناعة الإعلان الناجح", items: ["تصميم إعلان يجذب الانتباه ويزيد التفاعل.", "قوة الصورة والفيديو في نجاح حملتك.", "كتابة نص إعلاني يحفز العميل على الشراء وتحقيق مبيعات."] },
+      { title: "المحور الثالث: الاستهداف الاحترافي", items: ["استهداف الجمهور المثالي بدقة واختيار الفئة المناسبة.", "تجنب أخطاء الاستهداف التي تهدر الميزانية."] },
+      { title: "المحور الرابع: الميزانية والدفع", items: ["ما يجب معرفته عن الدفع والرسوم وتحديد الميزانية اليومية والكلية.", "إدارة الإنفاق لتحقيق أفضل عائد."] },
+      { title: "المحور الخامس: إطلاق الحملة وتحليل النتائج", items: ["إطلاق حملتك الإعلانية خطوة بخطوة وقراءة النتائج وفهم الإحصائيات.", "تحسين الإعلانات وزيادة المبيعات وأسرار توسيع الحملات الناجحة."] }
+    ]
+  },
+  pdf: {
+    title: "💰 محاور دورة بيع المنتجات الرقمية",
+    subtitle: "18 درساً لبناء متجرك ودخلك الرقمي",
+    sections: [
+      { title: "المحور الأول: التعرف على عالم المنتجات الرقمية", items: ["الأدوات الذهبية التي ستبدأين بها رحلتك.", "أسرار إنشاء ملفات PDF احترافية للبيع.", "بناء نموذجك الرقمي الأول خطوة بخطوة وتطويره ليصبح جاهزاً للسوق والربح."] },
+      { title: "المحور الثاني: تصميم المنتج وإخراجه باحتراف", items: ["تصميم غلاف يخطف الانتباه وعرضه بموكاب احترافي يرفع قيمته.", "تجهيز الغلاف والملف بسرعة واحترافية.", "ابتكار منتجات رقمية جاهزة للبيع فوراً وتحويل الأفكار إلى مكتبة مربحة."] },
+      { title: "المحور الثالث: إنشاء المتجر الرقمي", items: ["إطلاق موقعك الخاص بدون تعقيد وتنسيق الهوية البصرية لمتجرك.", "إعداد بوابات الدفع واستلام الأرباح ورفع الملفات وتنظيم المنتجات."] },
+      { title: "المحور الرابع: التسويق وتحقيق المبيعات", items: ["رحلة العميل من الدخول للموقع حتى الشراء.", "إطلاق حملات تسويقية ذكية تقود العملاء لمتجرك.", "سحب أرباحك بثقة وسهولة وإدارة الأرباح وتنمية دخلك."] }
+    ]
+  },
+  video: {
+    title: "🎬 محاور دورة تحويل الصور إلى فيديو",
+    subtitle: "11 درساً في صناعة الفيديوهات بالذكاء الاصطناعي",
+    sections: [
+      { title: "المحور الأول: البداية والتجهيز", items: ["كيفية التسجيل في الموقع وإنشاء الحساب.", "التعرف على الباقات والاشتراكات المدفوعة وإعداد الحساب للاستفادة القصوى."] },
+      { title: "المحور الثاني: إنشاء الفيديوهات", items: ["تصميم أول فيديو خطوة بخطوة وتصميم فيديو متقدم.", "إنتاج فيديو كامل من الفكرة إلى النتيجة النهائية وتصاميم احترافية."] },
+      { title: "المحور الثالث: الأصوات والتعليق الصوتي", items: ["تنبيه مهم بخصوص استخدام أصوات الأطفال وشرح إضافة صوت طفل وطريقة إضافة صوت طفلة.", "تحسين جودة الصوت ومزامنته مع الفيديو."] },
+      { title: "المحور الرابع: أدوات ومواقع مساعدة", items: ["موقع مميز لإنشاء وتطوير الفيديوهات ومواقع إضافية مساعدة.", "أفضل الأدوات المجانية والمدفوعة لصناعة المحتوى."] },
+      { title: "المحور الخامس: الاحتراف وتحقيق النتائج", items: ["أسرار إنتاج فيديوهات أكثر جاذبية وتجنب الأخطاء الشائعة.", "تحويل الفيديوهات إلى محتوى جاهز للنشر والتسويق."] }
+    ]
+  }
+};
+
+function openCourseModal(key) {
+  const data = courseTopicsData[key];
+  if (!data) return;
+  document.getElementById('modal-title').textContent = data.title;
+  document.getElementById('modal-subtitle').textContent = data.subtitle;
+  
+  const bodyEl = document.getElementById('modal-body');
+  bodyEl.innerHTML = '';
+  
+  data.sections.forEach(sec => {
+    const secBlock = document.createElement('div');
+    secBlock.className = 'modal-section-block';
+    secBlock.innerHTML = `
+      <div class="modal-section-title">📌 ${sec.title}</div>
+      <ul class="modal-topics-list">
+        ${sec.items.map(item => `<li>${item}</li>`).join('')}
+      </ul>
+    `;
+    bodyEl.appendChild(secBlock);
+  });
+  
+  const backdrop = document.getElementById('course-modal-backdrop');
+  backdrop.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCourseModal() {
+  const backdrop = document.getElementById('course-modal-backdrop');
+  backdrop.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeCourseModal();
+});
 </script>
+
+<!-- ══════ COURSE TOPICS MODAL HTML ══════ -->
+<div class="course-modal-backdrop" id="course-modal-backdrop" onclick="if(event.target===this)closeCourseModal()">
+  <div class="course-modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="course-modal-header">
+      <div>
+        <h3 class="course-modal-title" id="modal-title">محاور الدورة</h3>
+        <div class="course-modal-subtitle" id="modal-subtitle">التفاصيل الكاملة</div>
+      </div>
+      <button class="course-modal-close" onclick="closeCourseModal()" aria-label="إغلاق النافذة">✕</button>
+    </div>
+    <div class="course-modal-body" id="modal-body">
+      <!-- Dynamic Content -->
+    </div>
+    <div class="course-modal-footer">
+      <div style="font-size:0.88rem;font-weight:700;color:var(--text-muted);" id="modal-footer-info">جاهزة للبدء والتميز؟ 🚀</div>
+      <a href="https://bit.ly/4grexm7" target="_blank" class="nav-cta" rel="noopener" style="padding:10px 22px;font-size:0.9rem!important;">
+        💬 تواصلي عبر واتساب للاشتراك
+      </a>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
