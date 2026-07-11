@@ -861,25 +861,6 @@ footer {
 .footer-bottom { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
 
 /* ════════════════════════════════════
-   WHATSAPP FLOAT
-════════════════════════════════════ */
-.wa-float {
-  position: fixed; bottom: 28px; right: 28px; left: auto; z-index: 999;
-  width: 60px; height: 60px; border-radius: 50%;
-  background: #25D366;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.6rem; color: white;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.5);
-  animation: wa-pulse 2.5s infinite;
-  transition: transform 0.2s;
-}
-.wa-float:hover { transform: scale(1.12); }
-@keyframes wa-pulse {
-  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5), 0 0 0 0 rgba(37,211,102,0.4); }
-  70% { box-shadow: 0 4px 20px rgba(37,211,102,0.5), 0 0 0 16px rgba(37,211,102,0); }
-}
-
-/* ════════════════════════════════════
    COURSE TOPICS MODAL
 ════════════════════════════════════ */
 .course-modal-backdrop {
@@ -1009,25 +990,6 @@ footer {
   border-color: var(--pink-main);
   box-shadow: 0 0 0 3px rgba(233,30,140,0.1);
 }
-.wa-submit-btn {
-  width: 100%;
-  background: #25D366;
-  color: white; border: none;
-  border-radius: var(--radius-sm);
-  padding: 10px 16px;
-  font-family: inherit; font-size: 0.88rem; font-weight: 800;
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 12px rgba(37,211,102,0.3);
-}
-.wa-submit-btn:hover {
-  background: #1ebe5c;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(37,211,102,0.45);
-}
-.wa-submit-btn svg { flex-shrink: 0; }
-
 /* ════════════════════════════════════
    BUNDLE SECTION
 ════════════════════════════════════ */
@@ -1242,11 +1204,6 @@ footer {
 </head>
 <body>
 
-<!-- WhatsApp Float -->
-<a href="https://bit.ly/4grexm7" class="wa-float" target="_blank" rel="noopener" aria-label="واتساب">
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
 <!-- ══════ NAVBAR ══════ -->
 <nav class="topbar">
   <div class="nav-logo">
@@ -1261,8 +1218,8 @@ footer {
     <li><a href="#about">من أنا</a></li>
     <li><a href="#faq">الأسئلة الشائعة</a></li>
     <li>
-      <a href="https://bit.ly/4grexm7" target="_blank" class="nav-cta" rel="noopener">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <a href="mailto:omjori.online@gmail.com" class="nav-cta">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
         تواصلي
       </a>
     </li>
@@ -1283,8 +1240,8 @@ footer {
   <a href="#testimonials" onclick="toggleMenu()">آراء المتدربات</a>
   <a href="#about" onclick="toggleMenu()">من أنا</a>
   <a href="#faq" onclick="toggleMenu()">الأسئلة الشائعة</a>
-  <a href="https://bit.ly/4grexm7" target="_blank" style="color:var(--pink-main);font-weight:800;" rel="noopener">
-    تواصلي عبر واتساب 💬
+  <a href="mailto:omjori.online@gmail.com" style="color:var(--pink-main);font-weight:800;">
+    تواصلي عبر الإيميل ✉️
   </a>
 </div>
 
@@ -1311,14 +1268,12 @@ footer {
         <div class="badge">✅ أكثر من 200 متدربة</div>
         <div class="badge">🎓 دورات مسجلة مدى الحياة</div>
         <div class="badge">📜 شهادة حضور</div>
-        <div class="badge">💬 دعم واتساب</div>
+        <div class="badge">✉️ دعم عبر الإيميل</div>
       </div>
 
       <div class="hero-btns">
-        <a href="https://bit.ly/4grexm7" target="_blank" class="btn-primary" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          ابدئي الآن عبر واتساب 🩷
-          
+        <a href="#courses" class="btn-primary">
+          🚀 ابدئي الآن
         </a>
         <a href="#courses" class="btn-secondary">
           استعرضي الدورات →
@@ -1406,8 +1361,8 @@ footer {
       </div>
       <div class="why-card fade-in">
         <div class="why-icon">💬</div>
-        <h3>دعم واتساب لشهرين</h3>
-        <p>فريقنا موجود دائماً للإجابة على أسئلتك عبر واتساب</p>
+        <h3>دعم عبر الإيميل لشهرين</h3>
+        <p>فريقنا موجود دائماً للإجابة على أسئلتك عبر الإيميل</p>
       </div>
       <div class="why-card fade-in">
         <div class="why-icon">🏆</div>
@@ -1448,18 +1403,6 @@ footer {
             <a href="https://buy.stripe.com/8x26oJgIh0YvfRP85e57W02" target="_blank" rel="noopener" class="course-enroll">💳 اشتري الآن</a>
           </div>
         </div>
-        <!-- Lead Form -->
-        <div class="course-lead-form">
-          <div class="form-title">📋 سجّلي بياناتك للتواصل الفوري</div>
-          <div class="form-row">
-            <input type="text" class="form-input" placeholder="الاسم الكامل" id="name-canva">
-            <input type="tel" class="form-input" placeholder="رقم الهاتف" id="phone-canva" dir="ltr">
-          </div>
-          <button class="wa-submit-btn" onclick="sendToWhatsApp('canva', 'دورة Canva الاحترافية')">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            احجزي مكانك عبر واتساب
-          </button>
-        </div>
       </article>
       <article class="course-card fade-in" itemscope itemtype="https://schema.org/Course">
         <div class="course-thumb" style="background:linear-gradient(135deg,var(--pink-light),var(--bg-alt));">
@@ -1477,18 +1420,6 @@ footer {
             <div class="course-price">250 <small>درهم إماراتي</small></div>
             <a href="https://buy.stripe.com/4gM14p0Jj22z9tr85e57W03" target="_blank" rel="noopener" class="course-enroll">💳 اشتري الآن</a>
           </div>
-        </div>
-        <!-- Lead Form -->
-        <div class="course-lead-form">
-          <div class="form-title">📋 سجّلي بياناتك للتواصل الفوري</div>
-          <div class="form-row">
-            <input type="text" class="form-input" placeholder="الاسم الكامل" id="name-chatgpt">
-            <input type="tel" class="form-input" placeholder="رقم الهاتف" id="phone-chatgpt" dir="ltr">
-          </div>
-          <button class="wa-submit-btn" onclick="sendToWhatsApp('chatgpt', 'دورة الذكاء الاصطناعي و ChatGPT')">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            احجزي مكانك عبر واتساب
-          </button>
         </div>
       </article>
 
@@ -1508,18 +1439,6 @@ footer {
             <div class="course-price">299 <small>درهم إماراتي</small></div>
             <a href="https://buy.stripe.com/9B67sN77HfTp3531GQ57W04" target="_blank" rel="noopener" class="course-enroll">💳 اشتري الآن</a>
           </div>
-        </div>
-        <!-- Lead Form -->
-        <div class="course-lead-form">
-          <div class="form-title">📋 سجّلي بياناتك للتواصل الفوري</div>
-          <div class="form-row">
-            <input type="text" class="form-input" placeholder="الاسم الكامل" id="name-pdf">
-            <input type="tel" class="form-input" placeholder="رقم الهاتف" id="phone-pdf" dir="ltr">
-          </div>
-          <button class="wa-submit-btn" onclick="sendToWhatsApp('pdf', 'دورة بيع الملفات الرقمية')">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            احجزي مكانك عبر واتساب
-          </button>
         </div>
       </article>
 
@@ -1541,18 +1460,6 @@ footer {
             <a href="https://buy.stripe.com/3cIaEZ1Nn5eL7ljetC57W06" target="_blank" rel="noopener" class="course-enroll">💳 اشتري الآن</a>
           </div>
         </div>
-        <!-- Lead Form -->
-        <div class="course-lead-form">
-          <div class="form-title">📋 سجّلي بياناتك للتواصل الفوري</div>
-          <div class="form-row">
-            <input type="text" class="form-input" placeholder="الاسم الكامل" id="name-ads">
-            <input type="tel" class="form-input" placeholder="رقم الهاتف" id="phone-ads" dir="ltr">
-          </div>
-          <button class="wa-submit-btn" onclick="sendToWhatsApp('ads', 'دورة الإعلانات الممولة')">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            احجزي مكانك عبر واتساب
-          </button>
-        </div>
       </article>
 
       <!-- IMAGE TO VIDEO -->
@@ -1572,18 +1479,6 @@ footer {
             <div class="course-price">220 <small>درهم إماراتي</small></div>
             <a href="https://buy.stripe.com/dRm3cxajTbD9axv99i57W05" target="_blank" rel="noopener" class="course-enroll">💳 اشتري الآن</a>
           </div>
-        </div>
-        <!-- Lead Form -->
-        <div class="course-lead-form">
-          <div class="form-title">📋 سجّلي بياناتك للتواصل الفوري</div>
-          <div class="form-row">
-            <input type="text" class="form-input" placeholder="الاسم الكامل" id="name-video">
-            <input type="tel" class="form-input" placeholder="رقم الهاتف" id="phone-video" dir="ltr">
-          </div>
-          <button class="wa-submit-btn" onclick="sendToWhatsApp('video', 'دورة تحويل الصور إلى فيديو')">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            احجزي مكانك عبر واتساب
-          </button>
         </div>
       </article>
 
@@ -1636,18 +1531,9 @@ footer {
           <li><span class="bf-icon">📢</span> دورة الإعلانات الممولة (150 درهم)</li>
           <li><span class="bf-icon">🎬</span> دورة تحريك الصورة إلى فيديو (220 درهم)</li>
           <li><span class="bf-icon">🎁</span> إمكانية البدء حسب الخطة التدريبية</li>
-          <li><span class="bf-icon">💬</span> دعم واتساب لشهرين لكل الدورات</li>
+          <li><span class="bf-icon">✉️</span> دعم عبر الإيميل لشهرين لكل الدورات</li>
           <li><span class="bf-icon">♾️</span> وصول مدى الحياة لجميع المحتوى</li>
         </ul>
-
-        <!-- Bundle Lead Form -->
-        <div class="course-lead-form" style="border:none;padding:0 0 18px;background:transparent;">
-          <div class="form-title" style="font-size:0.9rem;margin-bottom:12px;">📋 سجّلي بياناتك لحجز الباقة الكاملة</div>
-          <div class="form-row">
-            <input type="text" class="form-input" placeholder="الاسم الكامل" id="name-bundle" style="border-color:var(--pink-main);">
-            <input type="tel" class="form-input" placeholder="رقم الهاتف" id="phone-bundle" dir="ltr" style="border-color:var(--pink-main);">
-          </div>
-        </div>
 
         <!-- CTA -->
         <a href="https://buy.stripe.com/00wdRb8bLaz5bBzdpy57W01" target="_blank" rel="noopener"
@@ -1656,7 +1542,7 @@ footer {
         </a>
 
         <p class="bundle-disclaimer">
-          🔒 دفع آمن عبر Stripe • أو <a href="https://bit.ly/4grexm7" target="_blank" rel="noopener" style="color:var(--pink-main);font-weight:700;">تواصلي عبر واتساب</a> للاستفسار
+          🔒 دفع آمن عبر Stripe • للاستفسار راسلينا على <a href="mailto:omjori.online@gmail.com" style="color:var(--pink-main);font-weight:700;">omjori.online@gmail.com</a>
         </p>
       </div>
     </div>
@@ -1677,7 +1563,7 @@ footer {
       <div class="get-item fade-in"><div class="get-check">🎨</div><div class="get-item-text"><h4>قوالب مجانية</h4><p>قوالب جاهزة توفر عليك الوقت والجهد</p></div></div>
       <div class="get-item fade-in"><div class="get-check">📜</div><div class="get-item-text"><h4>شهادة حضور معتمدة</h4><p>أضيفيها لسيرتك الذاتية بثقة</p></div></div>
       <div class="get-item fade-in"><div class="get-check">🔄</div><div class="get-item-text"><h4>تحديثات مستقبلية مجانية</h4><p>كل جديد يُضاف تلقائياً لحسابك</p></div></div>
-      <div class="get-item fade-in"><div class="get-check">💬</div><div class="get-item-text"><h4>دعم واتساب لشهرين</h4><p>فريقنا موجود دائماً للإجابة على أسئلتك</p></div></div>
+      <div class="get-item fade-in"><div class="get-check">✉️</div><div class="get-item-text"><h4>دعم عبر الإيميل لشهرين</h4><p>فريقنا موجود دائماً للإجابة على أسئلتك</p></div></div>
       <div class="get-item fade-in"><div class="get-check">♾️</div><div class="get-item-text"><h4>وصول مدى الحياة</h4><p>مشاهدة الدروس في أي وقت وكم مرة تريدين</p></div></div>
     </div>
   </div>
@@ -1836,8 +1722,8 @@ footer {
           <div class="about-stat"><div class="n">+3</div><div class="l">سنوات خبرة</div></div>
         </div>
         <div style="margin-top:26px;">
-          <a href="https://bit.ly/4grexm7" target="_blank" class="btn-primary" style="display:inline-flex;" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <a href="mailto:omjori.online@gmail.com" class="btn-primary" style="display:inline-flex;">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
             تواصلي معي مباشرةً
           </a>
         </div>
@@ -1884,7 +1770,7 @@ footer {
           هل يوجد دعم بعد الانتهاء؟
           <span class="faq-icon">+</span>
         </div>
-        <div class="faq-answer">نعم، يوجد دعم عبر واتساب لمدة شهرين بعد اشتراكك.</div>
+        <div class="faq-answer">نعم، يوجد دعم عبر الإيميل (omjori.online@gmail.com) لمدة شهرين بعد اشتراكك.</div>
       </div>
 
       <div class="faq-item fade-in">
@@ -1892,7 +1778,7 @@ footer {
           كيف أشترك في الدورات؟
           <span class="faq-icon">+</span>
         </div>
-        <div class="faq-answer">ببساطة تواصلي معنا عبر واتساب بالضغط على أي زر في الصفحة وسيتم إرشادك فوراً.</div>
+        <div class="faq-answer">ببساطة اضغطي على زر «اشتري الآن» في الدورة التي ترغبين بها وأتمّي الدفع الآمن عبر Stripe، وستصلك روابط الدورة فوراً. ولأي استفسار راسلينا على omjori.online@gmail.com.</div>
       </div>
 
     </div>
@@ -1903,15 +1789,14 @@ footer {
 <section class="final-cta">
   <h2>ابدئي رحلتك اليوم 🩷</h2>
   <p>كل خطوة صغيرة تتعلمينها اليوم قد تكون بداية نجاح كبير غداً.</p>
-  <a href="https://bit.ly/4grexm7" target="_blank" class="btn-white" rel="noopener">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="#C2185B"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    تواصلي عبر واتساب الآن
+  <a href="#courses" class="btn-white">
+    🚀 استعرضي الدورات وابدئي الآن
   </a>
   <div class="final-guarantees">
     <div class="guarantee-item"><div class="gicon">📦</div>وصول فوري</div>
     <div class="guarantee-item"><div class="gicon">🔒</div>دفع آمن</div>
     <div class="guarantee-item"><div class="gicon">♾️</div>مدى الحياة</div>
-    <div class="guarantee-item"><div class="gicon">💬</div>دعم لشهرين</div>
+    <div class="guarantee-item"><div class="gicon">✉️</div>دعم لشهرين</div>
   </div>
 </section>
 
@@ -1920,9 +1805,10 @@ footer {
   <div class="footer-inner">
     <div class="footer-logo">أكاديميه  <span>أم جوري</span> 🩷</div>
     <p class="footer-desc">منصة تعليمية رقمية متخصصة في تدريب المرأة العربية على مهارات المستقبل بطريقة عملية ومبسطة.</p>
+    <p class="footer-desc">📧 للتواصل والاستفسار: <a href="mailto:omjori.online@gmail.com" style="color:#fff;font-weight:700;">omjori.online@gmail.com</a></p>
     <div class="footer-social">
-      <a href="https://bit.ly/4grexm7" target="_blank" class="social-link" rel="noopener" aria-label="WhatsApp">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <a href="mailto:omjori.online@gmail.com" class="social-link" aria-label="البريد الإلكتروني">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
       </a>
       <a href="https://2u.pw/19cJyR" target="_blank" class="social-link" rel="noopener" aria-label="Instagram">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -1964,101 +1850,6 @@ function toggleAcc(btn) {
   content.classList.toggle('open', !isOpen);
   btn.classList.toggle('open', !isOpen);
   btn.setAttribute('aria-expanded', !isOpen);
-}
-
-/* ═══ WHATSAPP LEAD FORM ═══ */
-function showToast(msg, type = 'error') {
-  /* Remove existing toast */
-  const old = document.getElementById('omj-toast');
-  if (old) old.remove();
-
-  const icons = { error: '⚠️', success: '✅' };
-  const colors = {
-    error: 'linear-gradient(135deg,#E91E8C,#C2185B)',
-    success: 'linear-gradient(135deg,#25D366,#1a9e50)'
-  };
-
-  const toast = document.createElement('div');
-  toast.id = 'omj-toast';
-  toast.setAttribute('role', 'alert');
-  toast.innerHTML = `
-    <span style="font-size:1.3rem;">${icons[type]}</span>
-    <span>${msg}</span>
-    <button onclick="this.parentElement.remove()" style="
-      background:rgba(255,255,255,0.2);border:none;border-radius:50%;
-      width:24px;height:24px;color:white;font-size:1rem;cursor:pointer;
-      display:flex;align-items:center;justify-content:center;flex-shrink:0;
-      margin-right:auto;
-    ">✕</button>
-  `;
-  Object.assign(toast.style, {
-    position: 'fixed',
-    top: '90px',
-    left: '50%',
-    transform: 'translateX(-50%) translateY(-20px)',
-    background: colors[type],
-    color: 'white',
-    padding: '14px 20px',
-    borderRadius: '14px',
-    fontFamily: "'Cairo','Tajawal',sans-serif",
-    fontSize: '0.95rem',
-    fontWeight: '700',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '10px',
-    boxShadow: '0 8px 32px rgba(0,0,0,0.22)',
-    zIndex: '9999',
-    minWidth: '260px',
-    maxWidth: '90vw',
-    direction: 'rtl',
-    opacity: '0',
-    transition: 'opacity 0.35s ease, transform 0.35s ease',
-  });
-  document.body.appendChild(toast);
-
-  /* Animate in */
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      toast.style.opacity = '1';
-      toast.style.transform = 'translateX(-50%) translateY(0)';
-    });
-  });
-
-  /* Auto dismiss */
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    toast.style.transform = 'translateX(-50%) translateY(-16px)';
-    setTimeout(() => toast.remove(), 380);
-  }, 3500);
-}
-
-function sendToWhatsApp(courseKey, courseName) {
-  const nameEl = document.getElementById('name-' + courseKey);
-  const phoneEl = document.getElementById('phone-' + courseKey);
-  const name = nameEl ? nameEl.value.trim() : '';
-  const phone = phoneEl ? phoneEl.value.trim() : '';
-
-  if (!name || !phone) {
-    /* Shake the empty fields */
-    [nameEl, phoneEl].forEach(el => {
-      if (el && !el.value.trim()) {
-        el.style.borderColor = 'var(--pink-main)';
-        el.style.animation = 'shake 0.4s ease';
-        setTimeout(() => { el.style.animation = ''; }, 500);
-      }
-    });
-    showToast('يرجى تعبئة الاسم ورقم الهاتف أولاً.', 'error');
-    return;
-  }
-
-  const msg = encodeURIComponent(
-    `مرحباً 👋
-أنا ${name}
-رقمي: ${phone}
-أرغب في الاشتراك في: ${courseName} 🎓
-أرجو التواصل معي للاستفسار وإتمام التسجيل.`
-  );
-  window.open('https://api.whatsapp.com/send?phone=971527288800&text=' + msg, '_blank');
 }
 
 /* Shake animation */
@@ -2231,8 +2022,8 @@ document.addEventListener('keydown', e => {
     </div>
     <div class="course-modal-footer">
       <div style="font-size:0.88rem;font-weight:700;color:var(--text-muted);" id="modal-footer-info">جاهزة للبدء والتميز؟ 🚀</div>
-      <a href="https://bit.ly/4grexm7" target="_blank" class="nav-cta" rel="noopener" style="padding:10px 22px;font-size:0.9rem!important;">
-        💬 تواصلي عبر واتساب للاشتراك
+      <a href="mailto:omjori.online@gmail.com" class="nav-cta" style="padding:10px 22px;font-size:0.9rem!important;">
+        ✉️ تواصلي عبر الإيميل للاستفسار
       </a>
     </div>
   </div>
